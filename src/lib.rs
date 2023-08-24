@@ -105,13 +105,13 @@ fn demo_success() {
     assert_eq!(
         output,
         Some(vec![
-            ('\u{1F468}', ("input1.txt", SimpleSpan::new(0, 4))),
+            ('👨', ("input1.txt", SimpleSpan::new(0, 4))),
             ('\u{200D}', ("input1.txt", SimpleSpan::new(4, 7))),
-            ('\u{1F469}', ("input1.txt", SimpleSpan::new(7, 11))),
+            ('👩', ("input1.txt", SimpleSpan::new(7, 11))),
             ('\u{200D}', ("input1.txt", SimpleSpan::new(11, 14))),
-            ('\u{1F467}', ("input1.txt", SimpleSpan::new(14, 18))),
+            ('👧', ("input1.txt", SimpleSpan::new(14, 18))),
             ('\u{200D}', ("input1.txt", SimpleSpan::new(18, 21))),
-            ('\u{1F466}', ("input1.txt", SimpleSpan::new(21, 25)))
+            ('👦', ("input1.txt", SimpleSpan::new(21, 25)))
         ])
     );
     assert_eq!(errors, vec![]);
