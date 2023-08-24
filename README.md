@@ -5,9 +5,10 @@ A UTF-8 decoder based on Chumsky parser framework
 
 ```rust
 fn demo_success() {
+    let input = "👨‍👩‍👧‍👦".as_bytes().with_context("input1.txt");
     let (output, errors) = decoder::<_, _, extra::Err<Rich<_, _>>>()
         .collect::<Vec<_>>()
-        .parse("👨‍👩‍👧‍👦".as_bytes().with_context("input1.txt"))
+        .parse(input)
         .into_output_errors();
     assert_eq!(
         output,
@@ -28,9 +29,10 @@ fn demo_failure() {
     use chumsky::error::{RichPattern, RichReason};
     use chumsky::util::Maybe;
 
+    let input = b"\xED\xA0\x80".with_context("input2.txt");
     let (output, errors) = decoder::<_, _, extra::Err<Rich<_, _>>>()
         .collect::<Vec<_>>()
-        .parse(b"\xED\xA0\x80".with_context("input2.txt"))
+        .parse(input)
         .into_output_errors();
     assert_eq!(output, None);
     assert_eq!(errors.len(), 1);
