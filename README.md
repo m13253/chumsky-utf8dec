@@ -1,7 +1,9 @@
 # chumsky-utf8dec
-A UTF-8 decoder based on Chumsky parser framework
 
-## Example
+A UTF-8 decoder based on [Chumsky](https://github.com/zesterer/chumsky) parser
+framework.
+
+## Demo
 
 ```rust
 fn demo_success() {
@@ -46,3 +48,10 @@ fn demo_failure() {
     assert_eq!(errors[0].span(), &("input2.txt", SimpleSpan::new(1, 2)));
 }
 ```
+
+## License
+
+This code is released under MIT license.
+
+I don’t yet plan to release the code to [crates.io](https://crates.io), you may
+directly copy and paste my code into your own project if you want to use it.
